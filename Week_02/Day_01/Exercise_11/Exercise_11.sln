@@ -3,30 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "Exercise_11", "Exercise_11\obj\Debug\Exercise_11.exe", "{68314721-B517-4E1C-BB12-4A5E9301A3D5}"
-	ProjectSection(DebuggerProjectSystem) = preProject
-		PortSupplier = 00000000-0000-0000-0000-000000000000
-		Executable = C:\Users\Balazs\Greenfox\Week_02\Day_01\Exercise_11\Exercise_11\obj\Debug\Exercise_11.exe
-		RemoteMachine = PC
-		StartingDirectory = C:\Users\Balazs\Greenfox\Week_02\Day_01\Exercise_11\Exercise_11\obj\Debug
-		Environment = Default
-		LaunchingEngine = 00000000-0000-0000-0000-000000000000
-		UseLegacyDebugEngines = No
-		LaunchSQLEngine = No
-		AttachLaunchAction = No
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise_11", "Exercise_11\Exercise_11.csproj", "{E9AFE6DE-5FD1-400A-80E3-59B547EB0C72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Release|x86 = Release|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{68314721-B517-4E1C-BB12-4A5E9301A3D5}.Release|x86.ActiveCfg = Release|x86
+		{E9AFE6DE-5FD1-400A-80E3-59B547EB0C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AFE6DE-5FD1-400A-80E3-59B547EB0C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AFE6DE-5FD1-400A-80E3-59B547EB0C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AFE6DE-5FD1-400A-80E3-59B547EB0C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9106ABF0-3D34-4A6B-B404-CD23E8BECB90}
+		SolutionGuid = {816F0EC3-93FB-4867-953B-F999DD394293}
 	EndGlobalSection
 EndGlobal
