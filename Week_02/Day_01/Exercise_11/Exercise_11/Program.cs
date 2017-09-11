@@ -18,35 +18,66 @@ namespace Exercise_11
             b -= 7;
             Console.WriteLine(b);
 
-            int c = 12;
-            Console.WriteLine(c++);
-            Console.WriteLine(c);
+            int c = 44;
+            Console.WriteLine(c * 2);
 
-            int d = 12;
-            Console.WriteLine(++d);
-            Console.WriteLine(d);
+            int d = 125;
+            Console.WriteLine(d / 5);
 
-            int e = 12;
-            Console.WriteLine(e--);
-            Console.WriteLine(e);
+            int e = 8;
+            Console.WriteLine(e * e * e);
 
-            int f = 12;
-            Console.WriteLine(--f);
-            Console.WriteLine(f);
+            int f1 = 123;
+            int f2 = 345;
 
-            int g = 12;
-            g *= 3;
-            Console.WriteLine(g);
-
-            int h = 12;
-            h /= 3;
-            Console.WriteLine(h);
-
-            int i = 12;
-            i %= 7;
-            Console.WriteLine(i);
-
-
+            if (f1 > f2)
+            {
+                Console.WriteLine(true);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
+            int g1 = 350;
+            int g2 = 200;
+            if ((g2 * 2) > g1)
+            {
+                Console.WriteLine(true);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
+            long h = 1357988018575474;
+            if (h/11 == 0)
+            {
+                Console.WriteLine(true);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
+            int i1 = 10;
+            int i2 = 3;
+            if ((i1 > i2 * i2) && (i1 < (i2 * i2 * i2)))
+            {
+                Console.WriteLine(true);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
+            int j = 1521;
+            if ( (j/3 == 0) || (j/5 == 0))
+            {
+                Console.WriteLine(true);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
+            string k = "Apple";
+            Console.WriteLine(k + k + k + k);
             Console.ReadLine();
 
         
