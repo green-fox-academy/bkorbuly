@@ -1,0 +1,19 @@
+h1 {
+  color: #FF6347;
+}
+h2 {
+  color: #8B30E4;
+}
+ul {
+  list-style: square;
+}
+ol {
+  color: #FF78FF;
+  list-style: upper-roman;
+  text-decoration: underline;
+}
+ol li:last-child{
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: black; 
+}

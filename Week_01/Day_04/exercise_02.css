@@ -1,0 +1,28 @@
+body {
+  margin: 0px;
+}
+main{
+  border: 10px;
+  border-style: solid;
+  border-color: #4285F4;
+  width: 380px; 
+}
+p {
+  color: #FEFEFF;
+  margin: 0px;
+  font-size: 36px;
+  text-align: center;
+  padding: 25px 0;  
+}
+body p:first-child{
+  background: #E67676;
+}
+body p:nth-child(2){
+  background: #F2F062;
+}
+body p:nth-child(3){
+  background: #A9E6E6;
+}
+body p:last-child{
+  background: #7692E4;
+}

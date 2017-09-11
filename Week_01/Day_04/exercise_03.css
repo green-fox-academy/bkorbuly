@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  color: #FFFFFF;
+}
+article {
+  border: 16px;
+  border-color: #4285F4;
+  border-style: solid;
+  width: 380px;
+}
+p {
+  font-size: 36px;
+  text-align: center;
+  padding: 15px 0;
+ }
+main article:first-child{
+  background-color: #E67676;
+  margin-bottom: 7px;
+}
+main article:last-child{
+  background-color: #A9E6E6;
+}
