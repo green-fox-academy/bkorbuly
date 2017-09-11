@@ -29,55 +29,24 @@ namespace Exercise_11
 
             int f1 = 123;
             int f2 = 345;
+            Console.WriteLine(f1 > f2);
 
-            if (f1 > f2)
-            {
-                Console.WriteLine(true);
-            }
-            else
-            {
-                Console.WriteLine(false);
-            }
             int g1 = 350;
             int g2 = 200;
-            if ((g2 * 2) > g1)
-            {
-                Console.WriteLine(true);
-            }
-            else
-            {
-                Console.WriteLine(false);
-            }
+            Console.WriteLine((g2 * 2) > g1);
+            
             long h = 1357988018575474;
-            if (h/11 == 0)
-            {
-                Console.WriteLine(true);
-            }
-            else
-            {
-                Console.WriteLine(false);
-            }
+            Console.WriteLine(h / 11 == 0);
+            
             int i1 = 10;
             int i2 = 3;
-            if ((i1 > i2 * i2) && (i1 < (i2 * i2 * i2)))
-            {
-                Console.WriteLine(true);
-            }
-            else
-            {
-                Console.WriteLine(false);
-            }
+            Console.WriteLine((i1 > i2 * i2) && (i1 < (i2 * i2 * i2)));
+
             int j = 1521;
-            if ( (j/3 == 0) || (j/5 == 0))
-            {
-                Console.WriteLine(true);
-            }
-            else
-            {
-                Console.WriteLine(false);
-            }
+            Console.WriteLine((j / 3 == 0) || (j / 5 == 0));
+           
             string k = "Apple";
-            Console.WriteLine(k + k + k + k);
+            Console.WriteLine("{0}{0}{0}{0}", k);
             Console.ReadLine();
 
         
