@@ -10,6 +10,15 @@ namespace Exercise_12
     {
         static void Main(string[] args)
         {
+            double length, width, height = 0;
+
+            length = 15;
+            width = 25;
+            height = 30;
+            Console.WriteLine("Surface Area: " + 2 * (length * width + width * height + height * length));
+            Console.WriteLine("Volume: " + (length * width * height) );
+
+            Console.ReadLine();
         }
     }
 }
