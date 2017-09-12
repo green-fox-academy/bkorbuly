@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercise_01
+namespace Exercise_02
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int ak = 123;
-            Console.WriteLine(Doubling(ak));
+            string al = "Greenfox";
+            Console.WriteLine(Greet(al));
             Console.ReadLine();
         }
-        public static int Doubling(int num1)
+        static public string Greet(string al)
         {
-            return num1 *= 2;
+            return ("Greetings dear, " + al);
         }
     }
 }
