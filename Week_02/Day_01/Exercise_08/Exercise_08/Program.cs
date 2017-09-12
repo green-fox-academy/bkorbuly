@@ -10,7 +10,7 @@ namespace Exercise_08
     {
         static void Main(string[] args)
         {
-            int a = 123;
+            int a = -123;
             int b = 526;
             int c = 0;
 
@@ -19,6 +19,9 @@ namespace Exercise_08
             c = a;
             a = b;
             b = c;
+            //a = a ^ b;
+            //b = b ^ a;
+            //a = a ^ b;
 
             Console.WriteLine("Swapped order:\n a:" + a + "\n b:" + b );
 
