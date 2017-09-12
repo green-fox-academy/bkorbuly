@@ -16,9 +16,14 @@ namespace Exercise_04
             Console.ReadLine();
 
         }
-        static public void Sum(int num1, int num2, int  num3)
+        static public void Sum(params int[] nums)
         {
-            Console.WriteLine(num1 + num2 + num3);
+            int sum = 0;
+            foreach (int num in nums)
+            {
+                sum += num;
+            }
+            Console.WriteLine(sum);
         }
     }
 }
