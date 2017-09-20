@@ -19,9 +19,20 @@ namespace Exercise_02
     
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+            var foxDraw = new FoxDraw(canvas);
+            var pointList = new List<Point>()
+            {
+                new Point(10, 10),
+                new Point(50, 10),
+                new Point(50, 50),
+                new Point(10, 50),
+            };
+            foxDraw.FillColor(Colors.Black);
+            foxDraw.DrawPolygon(pointList);
         }
     }
 }
