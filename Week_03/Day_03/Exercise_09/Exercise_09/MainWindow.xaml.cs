@@ -22,7 +22,29 @@ namespace Exercise_09
         public MainWindow()
         {
             InitializeComponent();
+            Random rnd = new Random();
             var foxDraw = new FoxDraw(canvas);
+            var middlepoint = new Point(150, 150);
+            int squaresize = 150;
+            DrawSquare(foxDraw, middlepoint, squaresize);
+            foxDraw.FillColor(Colors.Aqua);
+            DrawSquare(foxDraw, middlepoint, rnd.Next(51, 120));
+            foxDraw.FillColor(Colors.LightPink);
+            DrawSquare(foxDraw, middlepoint, rnd.Next(0 , 50));
+
+        }
+
+        private void DrawSquare(FoxDraw foxDraw, Point middlepoint, int squaresize)
+        {
+            var squarepoints = new List<Point>()
+            {
+                new Point(middlepoint.X - squaresize , middlepoint.Y - squaresize),
+                new Point(middlepoint.X + squaresize , middlepoint.Y - squaresize),
+                new Point(middlepoint.X + squaresize , middlepoint.Y + squaresize),
+                new Point(middlepoint.X - squaresize , middlepoint.Y + squaresize),
+            };
+            foxDraw.DrawPolygon(squarepoints);
+
         }
     }
 }
