@@ -22,7 +22,22 @@ namespace Exercise_04
         public MainWindow()
         {
             InitializeComponent();
+            Random rnd = new Random();
+            int coordinates1 = rnd.Next(0, 301);
+            int coordinates2 = rnd.Next(0, 301);
             var foxDraw = new FoxDraw(canvas);
+            var point = new Point(15 , 15);
+            var point2 = new Point(85 , 15);
+            var point3 = new Point(coordinates1 ,coordinates2);
+            var pointmid = new Point(150 , 150);
+            LineDrawFunction(foxDraw, point, pointmid);
+            LineDrawFunction(foxDraw, point2, pointmid);
+            LineDrawFunction(foxDraw, point3, pointmid);
+        }    
+        public static void LineDrawFunction (FoxDraw canvas, Point start, Point middle)
+        {
+
+            canvas.DrawLine(start, middle);
         }
     }
 }
