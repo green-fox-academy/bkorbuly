@@ -22,9 +22,15 @@ namespace Exercise_08
         public MainWindow()
         {
             InitializeComponent();
+            Random rnd = new Random();
             var foxDraw = new FoxDraw(canvas);
             var startpoint = new Point(30 , 30);
+            var startpoint2 = new Point(rnd.Next(0 , 251) , rnd.Next(0 , 251));
+            var startpoint3 = new Point(rnd.Next(0, 251), rnd.Next(0, 251));
+
             DrawSquare(foxDraw, startpoint);
+            DrawSquare(foxDraw, startpoint2);
+            DrawSquare(foxDraw, startpoint3);
         }
 
         private void DrawSquare(FoxDraw foxDraw, Point startpoint)
