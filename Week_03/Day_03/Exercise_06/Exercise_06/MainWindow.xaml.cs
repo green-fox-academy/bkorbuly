@@ -23,6 +23,15 @@ namespace Exercise_06
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
+            var points = new List<Point>()
+            {
+                new Point(140 , 140),
+                new Point(160 , 140),
+                new Point(160 , 160),
+                new Point(140 , 160) 
+            };
+            foxDraw.FillColor(Colors.Green);
+            foxDraw.DrawPolygon(points);
         }
     }
 }
