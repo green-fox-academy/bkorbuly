@@ -25,6 +25,10 @@ namespace Exercise_03
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
+            foxDraw.StrokeColor(Colors.Green);
+            foxDraw.DrawLine(0, 0, 300, 300);
+            foxDraw.StrokeColor(Colors.Green);
+            foxDraw.DrawLine(300, 0, 0, 300);
         }
     }
 }
