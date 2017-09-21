@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercise_01
+namespace Exercise_02
 {
     class Program
     {
@@ -12,20 +12,17 @@ namespace Exercise_01
         {
             int num;
             num = Convert.ToInt32(Console.ReadLine());
-            Counter(num);
+            Console.WriteLine(Counter(num));
             Console.ReadLine();
         }
+
         public static int Counter(int num)
         {
-            if(num == 0 )
+            if (num > 0)
             {
-                return 0;
+              return num + Counter(--num);
             }
-            else
-            {
-                Console.WriteLine(num);
-                return Counter(num - 1);
-            }
+            return num;
         }
     }
 }
