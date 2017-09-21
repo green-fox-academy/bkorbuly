@@ -20,13 +20,13 @@ namespace Exercise_06
 
         public static int PowerToN(int basen, int powerto)
         {
-            if ( powerto > 1 )
+            if (powerto > 1)
             {
                 return basen * PowerToN(basen, --powerto);
             }
 
             return basen;
-            
+
         }
     }
 }
