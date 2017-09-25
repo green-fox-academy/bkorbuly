@@ -13,15 +13,22 @@ namespace Exercise_01_PostIt
         {
             public ConsoleColor Background;
             public string Text;
-            public TextEffect Textcolor;
+            public ConsoleColor Textcolor;
         }
 
 
         static void Main(string[] args)
         {
             PostIt examples, examples1, examples2;
-            examples.Background = ConsoleColor.White;
-            examples
+            examples.Background = ConsoleColor.Blue;
+            examples.Text = "Idea 1";
+            examples.Textcolor = ConsoleColor.Black;
+
+            Console.BackgroundColor = examples.Background;
+            Console.WriteLine(examples.Text);
+            Console.ForegroundColor = examples.Textcolor;
+
+
 
 
             Console.WriteLine();
