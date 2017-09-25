@@ -25,13 +25,9 @@ namespace Exercise_01_PostIt
             examples.Textcolor = ConsoleColor.Black;
 
             Console.BackgroundColor = examples.Background;
-            Console.WriteLine(examples.Text);
             Console.ForegroundColor = examples.Textcolor;
+            Console.WriteLine(examples.Text);
 
-
-
-
-            Console.WriteLine();
             Console.ReadLine();
 
         }
