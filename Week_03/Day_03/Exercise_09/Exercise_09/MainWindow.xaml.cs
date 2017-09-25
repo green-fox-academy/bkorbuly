@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GreenFox;
+using System.Reflection;
 
 namespace Exercise_09
 {
@@ -21,6 +22,11 @@ namespace Exercise_09
     {
         public MainWindow()
         {
+            GetAllColors();
+            
+            
+
+            
             InitializeComponent();
             Random rnd = new Random();
             var foxDraw = new FoxDraw(canvas);
@@ -45,6 +51,20 @@ namespace Exercise_09
             };
             foxDraw.DrawPolygon(squarepoints);
 
+        }
+        private List<Color> GetAllColors()
+        {
+            List<Color> allColors = new List<Color>();
+
+            foreach (PropertyInfo property in typeof(Color).GetProperties())
+            {
+                if (property.PropertyType == typeof(Color))
+                {
+                    allColors.Add((Color)property.GetValue(null));
+                    Console.WriteLine(allColors);
+                }
+            }
+            return allColors;
         }
     }
 }

@@ -24,13 +24,13 @@ namespace Exercise_29
                 }
                 Console.WriteLine();
             }
-            for (int i = line  - 1; i > 0; i--)
+            for (int i = line - 1; i > 0; i--)
             {
-                for (int j = 0; j < line - i; j++)
+                for (int j = 0; j > line - i ; j--)
                 {
                     Console.Write(" ");
                 }
-                for (int k = i * 2 - 1; k > 0; k--)
+                for (int k = i * 2 - 2; k > 0; k--)
                 {
                     Console.Write("*");
                 }

@@ -1,0 +1,16 @@
+machine:
+  pre:
+    - cd /opt/circleci/.pyenv; git pull
+
+  python:
+    version: 3.6.1
+
+dependencies:
+  override:
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+
+test:
+  override:
+    - pycodestyle .
+    - nose2 
