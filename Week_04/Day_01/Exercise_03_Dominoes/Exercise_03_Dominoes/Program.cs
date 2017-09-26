@@ -12,12 +12,12 @@ namespace Exercise_03_Dominoes
             // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
             // Create a function to write the dominous to the console in the following format
             // eg: [2, 4], [4, 3], [3, 5] ...
-            int[,] list = dominoes.ToArray();
-            foreach (int[] dom in dominoes)
+            foreach(Domino domino in dominoes)
             {
-
+                Console.WriteLine("[{0}, {1}]",domino.GetValues()[0], domino.GetValues()[1]);
             }
-            dominoes.ForEach(Console.WriteLine);
+
+
             Console.ReadLine();
         }
 
