@@ -6,30 +6,17 @@ using System.Threading.Tasks;
 
 namespace Exercise_03_Anagram
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            var ana = new Anagram();
             string text1, text2;
             text1 = Console.ReadLine();
             text2 = Console.ReadLine();
-            Console.WriteLine(Anagram(text1, text2));
+            Console.WriteLine(ana.AnagramCheck(text1, text2));
             Console.ReadLine();
 
-        }
-        static bool Anagram(string text1, string text2)
-        {
-            bool anagram = false;
-            char[] array1, array2;
-            if (text1.Length == text2.Length)
-            {
-                array1 = text1.ToCharArray();
-                array2 = text2.ToCharArray();
-                Array.Sort(array1);
-                Array.Sort(array2);
-                anagram = array1.SequenceEqual(array2);
-            }
-            return anagram;
         }
     }
 }
