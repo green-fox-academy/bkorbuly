@@ -20,8 +20,7 @@ namespace Exercise_03_Dominoes
             for (int i = 0; i < dominoes.Count - 1; i++)
             {
                 for (int j = 0; j < dominoes.Count ; j++)
-                {
-              
+                {              
                     if (dominoes[i].GetValues()[1] == dominoes[j].GetValues()[0])
                     {
                         //dominotemp = dominoes[i + 1];
@@ -29,18 +28,18 @@ namespace Exercise_03_Dominoes
                         dominoes.RemoveAt(j + 1);
                         //dominoes.RemoveAt(dominoes.Count - 1);
 
-                        Console.WriteLine("//////////////////////////////////////////////");
+                        //Console.WriteLine("//////////////////////////////////////////////");
 
                         //Console.WriteLine("[{0}, {1}]", dominoes[i].GetValues()[0], dominoes[i].GetValues()[1]);
                         //Console.WriteLine("[{0}, {1}]", dominoes[j].GetValues()[0], dominoes[j].GetValues()[1]);
                     }
                 }
             }
+            Console.WriteLine("");
             foreach (Domino domino in dominoes)
             {
-                Console.WriteLine("[{0}, {1}]", domino.GetValues()[0], domino.GetValues()[1]);
+                Console.Write("[{0}, {1}]", domino.GetValues()[0], domino.GetValues()[1]);
             }
-
             Console.ReadLine();
         }
 
