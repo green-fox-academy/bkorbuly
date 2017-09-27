@@ -10,6 +10,9 @@ namespace Exercise_01_Apples
     {
         static void Main(string[] args)
         {
+            var apple = new Apple();
+            Console.WriteLine(apple.GetApple());
+            Console.ReadLine();
         }
     }
 }
