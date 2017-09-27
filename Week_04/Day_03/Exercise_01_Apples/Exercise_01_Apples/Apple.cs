@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercise_01_Apples
 {
-    class Apple
+    public class Apple
     {
         private string message = "apple";
 
