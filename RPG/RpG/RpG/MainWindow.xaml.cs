@@ -23,7 +23,7 @@ namespace RpG
             InitializeComponent();
             Map.Canvas = canvas;
             Tile tile = new Tile();
-            tile.DrawTiles();            
+            tile.FillMatrix();     
         }
         private void WindowKeyDown(object sender, KeyEventArgs e)
         {

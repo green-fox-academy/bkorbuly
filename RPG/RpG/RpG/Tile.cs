@@ -19,15 +19,40 @@ namespace RpG
 {
     public class Tile : Map
     {
-        public void DrawTiles()
+        public bool[,] matrix = new bool[10, 10];
+        public string floorLocation = @"./Asset/floor.png";
+        public string wallLocation = @"./Asset/wall.png";
+        int tileWidth = 50;
+        int tileHeight = 50;
+
+        public bool[,] FillMatrix()
         {
-            string floor = @"./Asset/floor.png";
-            Console.WriteLine(File.Exists(floor));
-            for(int i = 0; i < 10; i++)
+            matrix[4, 0] = true;
+            matrix[5, 0] = true;
+            matrix[4, 1] = true;
+            matrix[5, 1] = true;
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                foxdraw.AddImage(floor, 0, 0);
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    DrawTiles(matrix[i, j], i, j);                    
+                }
             }
             
+            return matrix;
+            
+        }
+        public void DrawTiles(bool floorOrWall, int linePosition, int columnPosition)
+        {
+            if (floorOrWall)
+            {
+                foxdraw.AddImage(wallLocation, linePosition*tileHeight, columnPosition*tileWidth );
+            }
+            else
+            {
+                foxdraw.AddImage(floorLocation, linePosition * tileHeight, columnPosition * tileWidth);
+            }
         }
     }
 }
