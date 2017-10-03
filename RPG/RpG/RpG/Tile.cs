@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 using GreenFox;
 
 namespace RpG
@@ -20,14 +21,11 @@ namespace RpG
     {
         public void DrawTiles()
         {
-            string floor = @"C:\Users\Balazs\Greenfox\RPG\RpG\RpG\Asset\floor.png";
+            string floor = @"./Asset/floor.png";
+            Console.WriteLine(File.Exists(floor));
             for(int i = 0; i < 10; i++)
             {
-                //foxdraw.BackgroundColor(Colors.AliceBlue);
-                Point p1 = new Point(12, 123);
-                Point p2 = new Point(150, 123);
-                foxdraw.DrawLine(p1, p2);
-                foxdraw.AddImage(floor, 10, 10);
+                foxdraw.AddImage(floor, 0, 0);
             }
             
         }

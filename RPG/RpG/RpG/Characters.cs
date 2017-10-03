@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RpG
 {
-    class Characters
+    class Characters : Map
     {
     }
 }
