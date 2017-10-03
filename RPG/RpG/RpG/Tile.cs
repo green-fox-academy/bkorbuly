@@ -19,8 +19,8 @@ namespace RpG
 {
     public class Tile : Map
     {
-        public bool[,] matrix = new bool[10, 10];
-        public string floorLocation = @"./Asset/floor.png";
+        public static bool[,] matrix = new bool[10, 10];
+        static public string floorLocation = @"./Asset/floor.png";
         public string wallLocation = @"./Asset/wall.png";
         int tileWidth = 50;
         int tileHeight = 50;
@@ -36,7 +36,7 @@ namespace RpG
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    DrawTiles(matrix[i, j], i, j);                    
+                    DrawTiles(matrix[i, j], j, i);                    
                 }
             }
             
@@ -47,11 +47,11 @@ namespace RpG
         {
             if (floorOrWall)
             {
-                foxdraw.AddImage(wallLocation, columnPosition*tileHeight, linePosition*tileWidth );
+                foxdraw.AddImage(wallLocation, columnPosition*tileWidth, linePosition*tileHeight );
             }
             else
             {
-                foxdraw.AddImage(floorLocation, columnPosition * tileHeight, linePosition * tileWidth);
+                foxdraw.AddImage(floorLocation, columnPosition * tileWidth, linePosition * tileHeight);
             }
         }
     }

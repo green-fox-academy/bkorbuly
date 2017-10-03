@@ -20,6 +20,7 @@ namespace RpG
     {
         public static Canvas Canvas { get; set; }
         public FoxDraw foxdraw;
+
         public Map()
         {
             foxdraw= new FoxDraw(Canvas);
