@@ -27,10 +27,10 @@ namespace RpG
 
         public bool[,] FillMatrix()
         {
-            matrix[4, 0] = true;
-            matrix[5, 0] = true;
-            matrix[4, 1] = true;
-            matrix[5, 1] = true;
+            matrix[0, 4] = true;
+            matrix[0, 5] = true;
+            matrix[1, 4] = true;
+            matrix[1, 5] = true;
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -47,11 +47,11 @@ namespace RpG
         {
             if (floorOrWall)
             {
-                foxdraw.AddImage(wallLocation, linePosition*tileHeight, columnPosition*tileWidth );
+                foxdraw.AddImage(wallLocation, columnPosition*tileHeight, linePosition*tileWidth );
             }
             else
             {
-                foxdraw.AddImage(floorLocation, linePosition * tileHeight, columnPosition * tileWidth);
+                foxdraw.AddImage(floorLocation, columnPosition * tileHeight, linePosition * tileWidth);
             }
         }
     }

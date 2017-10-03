@@ -8,5 +8,9 @@ namespace RpG
 {
     class Characters : Map
     {
+        public void DisplayHero()
+        {
+            foxdraw.AddImage(@".'\Asset\hero-down.png", 0, 0);
+        }
     }
 }
