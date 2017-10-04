@@ -11,7 +11,7 @@ namespace RpG
         string skeletonImg = @"./Asset/skeleton.png";
         public Skeleton()
         {
-            Display(skeletonImg, 5, 5);
+            Display(skeletonImg, spawn(), spawn());
         }
     }
 }

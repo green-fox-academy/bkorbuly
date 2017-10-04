@@ -18,17 +18,18 @@ namespace RpG
 {
     class Characters : Map
     {
-        
-        public int x = 0;
-        public int y = 0;
-        public int movx = 0;
-        public int movy = 0;
+        static readonly Random rnd = new Random();
+        public int x;
+        public int y;
         public int tileWidth = 50;
         public int tileHeight = 50;
         
-        public void Display(string defaultImage, int x, int y)
+        public void Display(string defaultImage, int startpositionX, int startpositionY)
         {
-            foxdraw.AddImage(defaultImage, x, y);
+            x = startpositionX;
+            y = startpositionY;
+            spawnCheck();
+            foxdraw.AddImage(defaultImage, x * tileHeight, y * tileWidth);
         }
         
         public void MovementDisplay(int movx, int movy, string picture)
@@ -54,25 +55,18 @@ namespace RpG
             return false;
         }
 
-        public void MovmentDraw(int movx, int movy, string picture)
-        {                
-                if ( movx > 0 )
-                {
-                    foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
-                }
-                else if ( movx < 0)
-                {
-                    foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
-                }
-                else if (y > 0)
-                {
-                    foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
-                }
-                else
-                {
-                    foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
-                }
+        public int spawn()
+        {
+            return rnd.Next(0, 10);
+        }
 
+        public void spawnCheck()
+        {
+            while (Tile.matrix[x,y])
+            {
+                x = spawn();
+                y = spawn();
+            }
         }
     }
 }

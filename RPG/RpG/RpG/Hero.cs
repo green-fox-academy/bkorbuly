@@ -16,7 +16,7 @@ namespace RpG
 
         public Hero()
         {
-            Display(heroLocationDown, x, y);
+            Display(heroLocationDown, 0, 4);
         }
 
         public void HeroMovement(int movx, int movy)
