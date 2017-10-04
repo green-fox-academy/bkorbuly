@@ -13,5 +13,13 @@ namespace RpG
         {
             Display(skeletonImg, spawn(), spawn());
         }
+        public void MovementSkeleton()
+        {
+            if(Hero.counter == 2)
+            {
+                MovementDisplay(spawn(), spawn(), skeletonImg);
+            } 
+            
+        }
     }
 }

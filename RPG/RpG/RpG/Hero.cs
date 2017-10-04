@@ -13,6 +13,7 @@ namespace RpG
         public string heroLocationLeft = @"./Asset/hero-left.png";
         public string heroLocationRight = @"./Asset/hero-right.png";
         public string heroLocationUp = @"./Asset/hero-up.png";
+        public static int counter = 0;
 
         public Hero()
         {
@@ -37,8 +38,8 @@ namespace RpG
             {
                 heroLocation = heroLocationDown;
             }           
-
             MovementDisplay(movx, movy, heroLocation);
+            counter++;
         }
 
     }
