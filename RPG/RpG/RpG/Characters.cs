@@ -18,60 +18,61 @@ namespace RpG
 {
     class Characters : Map
     {
-        public string heroLocation = @"./Asset/hero-down.png";
-        public string heroLocationLeft = @"./Asset/hero-left.png";
-        public string heroLocationRight = @"./Asset/hero-right.png";
-        public string heroLocationUp = @"./Asset/hero-up.png";
-        int x = 0;
-        int y = 0;
-        int tileWidth = 50;
-        int tileHeight = 50;
-        int movx = 0;
-        int movy = 0;
-
-        public void DisplayHero()
+        
+        public int x = 0;
+        public int y = 0;
+        public int movx = 0;
+        public int movy = 0;
+        public int tileWidth = 50;
+        public int tileHeight = 50;
+        
+        public void Display(string defaultImage, int x, int y)
         {
-            foxdraw.AddImage(heroLocation, x, y);
+            foxdraw.AddImage(defaultImage, x, y);
+        }
+        
+        public void MovementDisplay(int movx, int movy, string picture)
+        {
+            if( !MovementCheck(movx, movy))
+            {
+                foxdraw.AddImage(Tile.floorLocation, x * tileHeight, y * tileWidth);
+                x += movx;
+                y += movy;
+                MovmentDraw(movx, movy, picture);
+                
+            }
         }
 
-        public void MovementHero(int movx, int movy)
-        {            
-            if ( (x + movx) < 0 || (y + movy) < 0 ||
-                (x + movx) > Tile.matrix.GetLength(0)-1 || (y + movy) > Tile.matrix.GetLength(1)-1  ||
+        public bool MovementCheck(int movx, int movy)
+        {
+            if ((x + movx) < 0 || (y + movy) < 0 ||
+                (x + movx) > Tile.matrix.GetLength(0) - 1 || (y + movy) > Tile.matrix.GetLength(1) - 1 ||
                 Tile.matrix[x + movx, y + movy])
             {
-                return;
+                return true;
             }
-            else
-            {
-                DisplayCorrectDirections(movx, movy);
-            }
+            return false;
         }
 
-        public void DisplayCorrectDirections(int movx, int movy)
-        {
-            foxdraw.AddImage(Tile.floorLocation, x * tileHeight, y * tileWidth);
-            if (x > x + movx )
-            {
-                x += movx;
-                foxdraw.AddImage(heroLocationLeft, x * tileHeight, y * tileWidth);
-                return;
-            }
-            else if (x < x + movx)
-            {
-                x += movx;
-                foxdraw.AddImage(heroLocationRight, x * tileHeight, y * tileWidth);
-            }
-            else if (y > y + movy)
-            {
-                y += movy;
-                foxdraw.AddImage(heroLocationUp, x * tileHeight, y * tileWidth);
-            }
-            else
-            {
-                y += movy;
-                foxdraw.AddImage(heroLocation, x * tileHeight, y * tileWidth);
-            }
+        public void MovmentDraw(int movx, int movy, string picture)
+        {                
+                if (x > x + movx)
+                {
+                    foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
+                }
+                else if (x < x + movx)
+                {
+                    foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
+                }
+                else if (y > y + movy)
+                {
+                    foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
+                }
+                else
+                {
+                    foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
+                }
+
         }
     }
 }

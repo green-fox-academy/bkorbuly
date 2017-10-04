@@ -19,42 +19,41 @@ namespace RpG
     public partial class MainWindow : Window
     {
 
-        Characters hero;
+        Hero hero;
 
         public MainWindow()
         {            
             InitializeComponent();
             Map.Canvas = canvas;
-            hero = new Characters();
             Tile tile = new Tile();
-            
             tile.FillMatrix();
-            hero.DisplayHero();
+            hero = new Hero();
+            //Skeleton enemy1 = new Skeleton();
         }
         private void WindowKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
             {
                 Console.WriteLine("To the left!");
-                hero.MovementHero(-1, 0);
+                hero.HeroMovement(-1, 0);
             }
 
             if (e.Key == Key.Right)
             {
                 Console.WriteLine("To the right!");
-                hero.MovementHero(1,0);
+                hero.HeroMovement(1,0);
             }
 
             if (e.Key == Key.Up)
             {
                 Console.WriteLine("To the up!");
-                hero.MovementHero(0, -1);
+                hero.HeroMovement (0, -1);
             }
 
             if (e.Key == Key.Down)
             {
                 Console.WriteLine("To the down!");
-                hero.MovementHero(0, 1);
+                hero.HeroMovement(0, 1);
             }
         }
     }
