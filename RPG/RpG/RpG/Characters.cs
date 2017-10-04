@@ -38,8 +38,8 @@ namespace RpG
                 foxdraw.AddImage(Tile.floorLocation, x * tileHeight, y * tileWidth);
                 x += movx;
                 y += movy;
-                MovmentDraw(movx, movy, picture);
-                
+                foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
+
             }
         }
 
@@ -56,15 +56,15 @@ namespace RpG
 
         public void MovmentDraw(int movx, int movy, string picture)
         {                
-                if (x > x + movx)
+                if ( movx > 0 )
                 {
                     foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
                 }
-                else if (x < x + movx)
+                else if ( movx < 0)
                 {
                     foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
                 }
-                else if (y > y + movy)
+                else if (y > 0)
                 {
                     foxdraw.AddImage(picture, x * tileHeight, y * tileWidth);
                 }

@@ -28,7 +28,7 @@ namespace RpG
             Tile tile = new Tile();
             tile.FillMatrix();
             hero = new Hero();
-            //Skeleton enemy1 = new Skeleton();
+            Skeleton enemy1 = new Skeleton();
         }
         private void WindowKeyDown(object sender, KeyEventArgs e)
         {

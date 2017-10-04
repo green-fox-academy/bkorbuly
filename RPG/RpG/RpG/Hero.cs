@@ -8,19 +8,37 @@ namespace RpG
 {
     class Hero : Characters
     {
-        public string heroLocation = @"./Asset/hero-down.png";
+        public string heroLocation;
+        public string heroLocationDown = @"./Asset/hero-down.png";
         public string heroLocationLeft = @"./Asset/hero-left.png";
         public string heroLocationRight = @"./Asset/hero-right.png";
         public string heroLocationUp = @"./Asset/hero-up.png";
 
         public Hero()
         {
-            Display(heroLocation, x, y);
+            Display(heroLocationDown, x, y);
         }
 
-        public void HeroMovement(int x, int y)
+        public void HeroMovement(int movx, int movy)
         {
-            MovementDisplay(x, y, heroLocation);
+            if (movx < 0)
+            {
+                heroLocation = heroLocationLeft;
+            }
+            else if (movx > 0)
+            {
+                heroLocation = heroLocationRight;
+            }
+            else if (movy < 0)
+            {
+                heroLocation = heroLocationUp;
+            }
+            else
+            {
+                heroLocation = heroLocationDown;
+            }           
+
+            MovementDisplay(movx, movy, heroLocation);
         }
 
     }
