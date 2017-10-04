@@ -19,30 +19,58 @@ namespace RpG
     class Characters : Map
     {
         public string heroLocation = @"./Asset/hero-down.png";
-        int x, y;
+        public string heroLocationLeft = @"./Asset/hero-left.png";
+        public string heroLocationRight = @"./Asset/hero-right.png";
+        public string heroLocationUp = @"./Asset/hero-up.png";
+        int x = 0;
+        int y = 0;
         int tileWidth = 50;
         int tileHeight = 50;
+        int movx = 0;
+        int movy = 0;
 
         public void DisplayHero()
         {
-            x = 0;
-            y = 0;
             foxdraw.AddImage(heroLocation, x, y);
         }
 
         public void MovementHero(int movx, int movy)
-        {
+        {            
             if ( (x + movx) < 0 || (y + movy) < 0 ||
-                (x + movx) > 9 || (y + movy) > 9  || Tile.matrix[x + movx, y + movy])
+                (x + movx) > Tile.matrix.GetLength(0)-1 || (y + movy) > Tile.matrix.GetLength(1)-1  ||
+                Tile.matrix[x + movx, y + movy])
             {
                 return;
             }
             else
             {
-                foxdraw.AddImage(Tile.floorLocation, x * tileHeight, y* tileWidth);
+                DisplayCorrectDirections(movx, movy);
+            }
+        }
+
+        public void DisplayCorrectDirections(int movx, int movy)
+        {
+            foxdraw.AddImage(Tile.floorLocation, x * tileHeight, y * tileWidth);
+            if (x > x + movx )
+            {
                 x += movx;
-                y += movy;                
-                foxdraw.AddImage(heroLocation, (x) * tileHeight, (y)*tileWidth);
+                foxdraw.AddImage(heroLocationLeft, x * tileHeight, y * tileWidth);
+                return;
+            }
+            else if (x < x + movx)
+            {
+                x += movx;
+                foxdraw.AddImage(heroLocationRight, x * tileHeight, y * tileWidth);
+            }
+            else if (y > y + movy)
+            {
+                y += movy;
+                foxdraw.AddImage(heroLocationUp, x * tileHeight, y * tileWidth);
+            }
+            else
+            {
+                y += movy;
+                foxdraw.AddImage(heroLocation, x * tileHeight, y * tileWidth);
             }
         }
     }

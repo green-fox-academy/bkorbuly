@@ -33,8 +33,6 @@ namespace RpG
         }
         private void WindowKeyDown(object sender, KeyEventArgs e)
         {
-
-
             if (e.Key == Key.Left)
             {
                 Console.WriteLine("To the left!");
