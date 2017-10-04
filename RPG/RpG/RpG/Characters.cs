@@ -32,7 +32,8 @@ namespace RpG
 
         public void MovementHero(int movx, int movy)
         {
-            if (Tile.matrix[x+movx,y+movy])
+            if ( (x + movx) < 0 || (y + movy) < 0 ||
+                (x + movx) > 9 || (y + movy) > 9  || Tile.matrix[x + movx, y + movy])
             {
                 return;
             }
