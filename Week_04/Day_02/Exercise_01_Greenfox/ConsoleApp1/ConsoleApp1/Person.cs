@@ -11,7 +11,7 @@ namespace ConsoleApp1
         protected string name;
         protected int age;
         protected string gender;
-        protected string text = "\nMy goal is:";
+        protected string text = "My goal is:";
 
         public Person()
         {
@@ -27,14 +27,14 @@ namespace ConsoleApp1
             this.gender = gender;
         }
 
-        public void Introduce()
+        public virtual void Introduce()
         {
-            Console.Write("Hi, I'm {0}, a {1} year old {2}. ", name, age, gender);
+            Console.Write("Hi, I'm {0}, a {1} year old {2} ", name, age, gender);
         }
 
         public virtual void GetGoal()
         {
-            Console.WriteLine("{0} Live for the moment.", text);
+            Console.WriteLine("\n{0} Live for the moment.\n", text);
         }
     }
 }

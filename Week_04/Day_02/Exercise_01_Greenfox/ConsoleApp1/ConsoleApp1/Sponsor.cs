@@ -23,10 +23,10 @@ namespace ConsoleApp1
             hiredStudents = 0;
         }
 
-        public new void Introduce()
+        public override void Introduce()
         {
             base.Introduce();
-            Console.WriteLine(" who represents {0} and hired {1} students so far", company, hiredStudents);
+            Console.WriteLine("who represents {0}\nand hired {1} students so far.", company, hiredStudents);
         }
 
         public void Hire()
@@ -36,7 +36,7 @@ namespace ConsoleApp1
 
         public override void GetGoal()
         {
-            Console.WriteLine("{0} Hire brilliant junior software develeopers", text);
+            Console.WriteLine("{0} Hire brilliant junior software develeopers.\n", text);
         }
     }
 }

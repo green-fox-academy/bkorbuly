@@ -23,15 +23,15 @@ namespace ConsoleApp1
             skippedDays = 0;
         }
 
-        public new void GetGoal()
+        public override void GetGoal()
         {
-            Console.WriteLine("{0} Be a junior software developer", base.text);
+            Console.WriteLine("{0} Be a junior software developer.\n", base.text);
         }
 
-        public new void Introduce()
+        public override void Introduce()
         {
             base.Introduce();
-            Console.WriteLine(" from {0} who skipped {1} days from the course already.",
+            Console.WriteLine("from {0}\nwho skipped {1} days from the course already.",
                 previousOrganization, skippedDays);
         }
 
