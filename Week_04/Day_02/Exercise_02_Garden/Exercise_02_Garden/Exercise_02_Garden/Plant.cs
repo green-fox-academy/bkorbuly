@@ -8,11 +8,9 @@ namespace Exercise_02_Garden
 {
     class Plant
     {
-        double waterLevel;
+        public double waterLevel;
         public bool needWaterOrNot;
-        public static int counter;
-        protected int waterMin;
-        protected double waterAbsorbption;
+        public static int counter = 0;
         protected string name;
 
         public Plant(double waterLevel, string name)
@@ -21,31 +19,9 @@ namespace Exercise_02_Garden
             this.name = name;
         }
 
-        public void Watering(double waterAmount)
-        {
-            waterLevel += waterAmount * waterAbsorbption;
-            Console.WriteLine("Watering with {0}", waterAmount * waterAbsorbption);
-            Info();
-            Console.WriteLine();
-        }
-
-        public bool CheckWater()
-        {
-            if(waterLevel > waterMin)
-            {
-                Console.WriteLine("The {0} does not need water.", name);
-                return needWaterOrNot = false;
-            }
-            else
-            {
-                Console.WriteLine("The {0} needs water.", name);
-                return needWaterOrNot = true;
-            }
-        }
-
         public void Info()
         {
-            Console.WriteLine("The {0}'s waterlevel is: {1}.", name, waterLevel);
+            Console.WriteLine("The {0}'s waterlevel is: {1}. It needs water: {2}.", name, waterLevel, needWaterOrNot);
         }
     }
     

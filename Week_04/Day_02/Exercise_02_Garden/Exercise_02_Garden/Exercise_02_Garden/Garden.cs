@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,6 @@ namespace Exercise_02_Garden
     {
         string gardenName;
         List<Plant> plants = new List<Plant>();
-        
 
         public Garden(string gardenName)
         {
@@ -32,17 +32,26 @@ namespace Exercise_02_Garden
             foreach(Plant plant in plants)
             {
                 plant.Info();
-                plant.CheckWater();
-                plant.Watering(WateringUnit(waterAmount));
-
+                if (plant.needWaterOrNot)
+                {
+                    Watering(WateringUnit(waterAmount), plant);
+                }
+                MethodInfo themethod = plant.GetType().GetMethod("ReCheckWaterLevel");
+                themethod.Invoke(plant, null);
+                plant.Info();
             }
         }
 
-
-        public double WateringUnit(int waterAmount)
+        public double WateringUnit(double waterAmount)
         {
-            return Convert.ToDouble((waterAmount / Plant.counter));
+            return (waterAmount / Plant.counter);
         }
 
+        public void Watering(double waterAmount, object plant)
+        {
+            double waterAbsorbption = Convert.ToDouble((plant.GetType().GetField("waterAbsorbption").GetValue(plant)));
+            double waterLevel = Convert.ToDouble(plant.GetType().GetField("waterLevel").GetValue(plant));
+            plant.GetType().GetField("waterLevel").SetValue(plant, (waterLevel + waterAmount * waterAbsorbption));
+        }
     }
 }
