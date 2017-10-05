@@ -25,7 +25,7 @@ namespace ConsoleApp1
 
         public new void GetGoal()
         {
-            Console.WriteLine("Be a junior software developer");
+            Console.WriteLine("{0} Be a junior software developer", base.text);
         }
 
         public new void Introduce()
@@ -35,7 +35,7 @@ namespace ConsoleApp1
                 previousOrganization, skippedDays);
         }
 
-        public void Skipdays(int numberOfDays)
+        public void SkipDays(int numberOfDays)
         {
             skippedDays += numberOfDays;
         }      

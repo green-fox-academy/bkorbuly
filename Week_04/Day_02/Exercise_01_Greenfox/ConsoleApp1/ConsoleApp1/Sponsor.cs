@@ -36,7 +36,7 @@ namespace ConsoleApp1
 
         public override void GetGoal()
         {
-            Console.WriteLine("Hire brilliant junior software develeopers");
+            Console.WriteLine("{0} Hire brilliant junior software develeopers", text);
         }
     }
 }

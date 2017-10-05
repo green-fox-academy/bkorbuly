@@ -22,7 +22,7 @@ namespace ConsoleApp1
 
         public override void GetGoal()
         {
-            Console.WriteLine("Educate brilliant junior software developers");
+            Console.WriteLine("{0} Educate brilliant junior software developers", base.text);
         }
 
         public new void Introduce()
