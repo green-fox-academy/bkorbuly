@@ -15,9 +15,10 @@ namespace Exercise_02_Garden
             garden.AddFlower(new Flower(5, "yellow"));
             garden.AddFlower(new Flower(25, "black"));
             garden.AddFlower(new Flower(15, "orange"));
+            garden.AddTree(new Tree(15, "green"));
+            garden.AddTree(new Tree(4, "red"));
 
-            //garden.GardenInfo(10);
-            garden.Info2();
+            garden.GardenInfo(10);
             Console.ReadLine();
         }
     }

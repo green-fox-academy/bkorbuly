@@ -8,11 +8,11 @@ namespace Exercise_02_Garden
 {
     class Flower : Plant
     {
+        public int waterMin = 10;
+        public double waterAbsorbption = 0.75;
         public Flower(double waterLevel, string name) : base(waterLevel, name)
         {
             this.name = name.Insert(name.Length, " Flower");
-            waterMin = 10;
-            waterAbsorbption = 0.75;
         }
 
       

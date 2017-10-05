@@ -19,6 +19,10 @@ namespace Exercise_02_Garden
         {
             this.waterLevel = waterLevel;
             this.name = name;
+            if (waterLevel < waterMin)
+            {
+                counter++;
+            }
         }
 
         public void Watering(double waterAmount)

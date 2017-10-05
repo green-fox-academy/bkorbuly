@@ -9,8 +9,6 @@ namespace Exercise_02_Garden
     class Garden
     {
         string gardenName;
-        List<Flower> flowers = new List<Flower>();
-        List<Tree> trees = new List<Tree>();
         List<Plant> plants = new List<Plant>();
         
 
@@ -29,31 +27,7 @@ namespace Exercise_02_Garden
             plants.Add(tree);
         }
 
-        public int CountPlantsInGarder()
-        {
-            return flowers.Count + trees.Count;
-        }
-
-        public void GardenInfo(int waterAmount)
-        {
-            Console.WriteLine("There are {0} flowers and {1} trees in the {2} garden.\nIn more details:\n",
-                flowers.Count, trees.Count, gardenName);
-
-            foreach(Flower flower in flowers)
-            {
-                flower.Info();
-                flower.CheckWater();
-                flower.Watering(WateringUnit(waterAmount));
-            }
-            foreach(Tree tree in trees)
-            {
-                tree.Info();
-                tree.CheckWater();
-                tree.Watering(WateringUnit(waterAmount));
-            }
-        }
-
-        public void Info2()
+        public void GardenInfo(int wateramount)
         {
             foreach(Plant plant in plants)
             {
