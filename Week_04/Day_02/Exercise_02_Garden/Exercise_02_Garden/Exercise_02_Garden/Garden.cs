@@ -27,12 +27,13 @@ namespace Exercise_02_Garden
             plants.Add(tree);
         }
 
-        public void GardenInfo(int wateramount)
+        public void GardenInfo(int waterAmount)
         {
             foreach(Plant plant in plants)
             {
                 plant.Info();
                 plant.CheckWater();
+                plant.Watering(WateringUnit(waterAmount));
 
             }
         }
