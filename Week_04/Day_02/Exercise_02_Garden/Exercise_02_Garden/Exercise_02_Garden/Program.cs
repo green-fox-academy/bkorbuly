@@ -16,10 +16,14 @@ namespace Exercise_02_Garden
             garden.AddFlower(new Flower(15, "orange"));
             garden.AddTree(new Tree(15, "green"));
             garden.AddTree(new Tree(1, "red"));
+            garden.AddTree(new Tree(3, "blue"));
+            garden.AddTree(new Tree(4, "white"));
 
+            garden.Printout();
+            Console.WriteLine();
             garden.GardenInfo(20);
             Console.WriteLine();
-            garden.GardenInfo(5);
+            garden.GardenInfo(10);
             Console.ReadLine();
         }
     }

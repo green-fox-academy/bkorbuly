@@ -29,19 +29,20 @@ namespace Exercise_02_Garden
 
         public void GardenInfo(int waterAmount)
         {
-            foreach(Plant plant in plants)
+            foreach (Plant plant in plants)
             {
-                plant.Info();
                 if (plant.needWaterOrNot)
                 {
                     Watering(WateringUnit(waterAmount), plant);
+                    MethodInfo themethod = plant.GetType().GetMethod("ReCheckWaterLevel");
+                    themethod.Invoke(plant, null);
+                    Plant.counter = 0;
+                    ++Plant.counter;
                 }
-                MethodInfo themethod = plant.GetType().GetMethod("ReCheckWaterLevel");
-                themethod.Invoke(plant, null);
-                plant.Info();
+                
             }
+            Printout();
         }
-
         public double WateringUnit(double waterAmount)
         {
             return (waterAmount / Plant.counter);
@@ -52,6 +53,14 @@ namespace Exercise_02_Garden
             double waterAbsorbption = Convert.ToDouble((plant.GetType().GetField("waterAbsorbption").GetValue(plant)));
             double waterLevel = Convert.ToDouble(plant.GetType().GetField("waterLevel").GetValue(plant));
             plant.GetType().GetField("waterLevel").SetValue(plant, (waterLevel + waterAmount * waterAbsorbption));
+        }
+
+        public void Printout()
+        {
+            foreach(Plant plant in plants)
+            {
+                plant.Info();
+            }
         }
     }
 }
