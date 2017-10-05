@@ -31,7 +31,7 @@ namespace ConsoleApp1
             Console.Write("Hi, I'm {0}, a {1} year old {2}", name, age, gender);
         }
 
-        public void GetGoal()
+        public virtual void GetGoal()
         {
             Console.WriteLine("My goal is: Live for the moment!");
         }

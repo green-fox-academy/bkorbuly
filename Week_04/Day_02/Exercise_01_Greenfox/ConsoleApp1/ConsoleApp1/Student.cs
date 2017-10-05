@@ -38,11 +38,6 @@ namespace ConsoleApp1
         public void Skipdays(int numberOfDays)
         {
             skippedDays += numberOfDays;
-        }
-
-      
+        }      
     }
-
-    
-
 }
