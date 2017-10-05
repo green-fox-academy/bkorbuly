@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Exercise_02_Garden
 {
-    class Tree
+    class Tree : Plant
     {
+        public Tree(double waterLevel, string name) :base(waterLevel, name)
+        {
+
+        }
     }
 }
