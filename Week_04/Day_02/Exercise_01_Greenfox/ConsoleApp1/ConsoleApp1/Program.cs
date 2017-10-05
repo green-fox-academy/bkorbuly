@@ -11,9 +11,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             var student = new Student("Balazs", 30, "male", "life");
-            student.PrintOut();
-            var person = new Person();
-            person.Introduce();
+            student.Introduce();
             Console.ReadLine();
         }
     }

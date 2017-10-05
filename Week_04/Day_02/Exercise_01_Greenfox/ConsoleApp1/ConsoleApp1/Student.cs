@@ -23,10 +23,24 @@ namespace ConsoleApp1
             skippedDays = 0;
         }
 
-        public void PrintOut()
+        public new void GetGoal()
         {
-            Console.WriteLine("{0},{1}",  previousOrganization, skippedDays);
+            Console.WriteLine("Be a junior software developer");
         }
+
+        public new void Introduce()
+        {
+            base.Introduce();
+            Console.WriteLine(" from {0} who skipped {1} days from the course already.",
+                previousOrganization, skippedDays);
+        }
+
+        public void Skipdays(int numberOfDays)
+        {
+            skippedDays += numberOfDays;
+        }
+
+      
     }
 
     

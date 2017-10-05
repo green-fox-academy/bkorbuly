@@ -8,9 +8,9 @@ namespace ConsoleApp1
 {
     class Person
     {
-        string name;
-        int age;
-        string gender;
+        protected string name;
+        protected int age;
+        protected string gender;
 
         public Person()
         {
@@ -28,7 +28,7 @@ namespace ConsoleApp1
 
         public void Introduce()
         {
-            Console.WriteLine("Hi, I'm {0}, a {1} year old {2}", name, age, gender);
+            Console.Write("Hi, I'm {0}, a {1} year old {2}", name, age, gender);
         }
 
         public void GetGoal()
