@@ -22,6 +22,7 @@ namespace Exercise_02_Garden
         public void Watering(int waterAmount)
         {
             waterLevel += waterAmount*waterAbsorbption;
+            Console.WriteLine("Watering with {0}", waterAmount);
         }
 
         public void CheckWater()

@@ -10,8 +10,16 @@ namespace Exercise_02_Garden
     {
         static void Main(string[] args)
         {
-            var flower1 = new Flower(10, "yellow");
-            flower1.Info();
+            var flowerList = new List<Plant>();
+                flowerList.Add(new Flower(15, "blue"));
+                flowerList.Add(new Flower(5, "yellow"));
+                flowerList.Add(new Flower(24, "orange"));
+                flowerList.Add(new Flower(34, "black"));
+            
+            foreach(Plant flower in flowerList)
+            {
+                flower.Info();
+            }
             Console.ReadLine();
         }
     }
