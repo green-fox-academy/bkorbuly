@@ -24,8 +24,7 @@ namespace Exercise_02
         }
         public double LamdaAverage(int[] n)
         {
-            var oddAverage = n.Where(x => (x % 2 != 0)).Average();
-            return oddAverage;
+            return n.Where(x => (x % 2 != 0)).Average();
         }
     }
 }
