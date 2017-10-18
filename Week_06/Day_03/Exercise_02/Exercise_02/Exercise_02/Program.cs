@@ -20,11 +20,12 @@ namespace Exercise_02
         }
         public double QueryAverage(int[] n)
         {
-            return (from numbers in n select numbers).Average();
+            return (from numbers in n where numbers % 2 != 0 select numbers ).Average();
         }
         public double LamdaAverage(int[] n)
         {
-            return n.Average(x => x);
+            var oddAverage = n.Where(x => (x % 2 != 0)).Average();
+            return oddAverage;
         }
     }
 }
