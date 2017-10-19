@@ -63,5 +63,26 @@ namespace Exercise_01_ParkingLot
                 Console.WriteLine("{0} {1}", types.Key, types.Count());
             }
         }
+
+        public static void CountColor()
+        {
+            var countColors = carlist.GroupBy(x => x.color);
+            Console.WriteLine("\nColors: Quantity:");
+            foreach (var color in countColors)
+            {
+                Console.WriteLine("{0} {1}", color.Key, color.Count());
+            }
+        }
+
+        public static void MostFrequentlyType()
+        {
+            var mostFrequentlyType = carlist.GroupBy(x => x).OrderBy(x => x.Key.type).OrderBy( x => x.Key.color).GroupBy(x => x.Key);
+            Console.WriteLine("\nMost Frequently Type:");
+            foreach (var type in mostFrequentlyType)
+            {
+                Console.WriteLine("{0} {1} {2}", type.Key.type, type.Key.color, type.Count());
+            }
+                        
+        }
     }
 }

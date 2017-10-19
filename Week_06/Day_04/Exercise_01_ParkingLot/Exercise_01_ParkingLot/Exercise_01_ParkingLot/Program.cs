@@ -12,6 +12,8 @@ namespace Exercise_01_ParkingLot
         {
             Car.CarInitialization();
             Car.CountTypes();
+            Car.CountColor();
+            Car.MostFrequentlyType();
             Console.ReadLine();
         }
     }
