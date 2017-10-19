@@ -12,6 +12,19 @@ namespace Exercise_01_ParkingLot
         {
             var carTest1 = new Car(Car.CarType.coupe, Car.CarColor.black);
             var carTest2 = new Car(Car.CarType.coupe, Car.CarColor.black);
+            var carListTest = new List<Car>();
+            carListTest.Add(new Car(Car.CarType.coupe, Car.CarColor.black));
+            carListTest.Add(new Car(Car.CarType.coupe, Car.CarColor.black));
+            carListTest.Add(new Car(Car.CarType.coupe, Car.CarColor.black));
+            carListTest.Add(new Car(Car.CarType.coupe, Car.CarColor.black));
+            carListTest.Add(new Car(Car.CarType.family, Car.CarColor.yellow));
+            carListTest.Add(new Car(Car.CarType.family, Car.CarColor.yellow));
+            carListTest.Add(new Car(Car.CarType.family, Car.CarColor.yellow));
+            carListTest.Add(new Car(Car.CarType.family, Car.CarColor.yellow));
+            carListTest.Add(new Car(Car.CarType.family, Car.CarColor.red));
+            carListTest.Add(new Car(Car.CarType.family, Car.CarColor.red));
+            carListTest.Add(new Car(Car.CarType.family, Car.CarColor.red));
+            carListTest.Add(new Car(Car.CarType.family, Car.CarColor.red));
             Car.CarInitialization();
             Car.CountTypes();
             Car.CountColor();
@@ -23,7 +36,7 @@ namespace Exercise_01_ParkingLot
             {
                 Console.WriteLine("NO");
             }
-            Car.MostFrequentlyType();
+            Car.MostFrequentlyType(carListTest);
             Console.ReadLine();
         }
     }

@@ -74,15 +74,17 @@ namespace Exercise_01_ParkingLot
             }
         }
 
-        public static void MostFrequentlyType()
+        public static void MostFrequentlyType(List<Car> carlist)
         {
-            var mostFrequentlyType = carlist.GroupBy(x => new { x.color, x.type }).OrderByDescending(x => x.Count()).Take(1).ToArray();
+            var frequentlyTypeList = carlist.GroupBy(x => new { x.color, x.type }).OrderByDescending(x => x.Count());
+            var maxRep = frequentlyTypeList.Max(x => x.Count());
+            var mostFrequentlyType = frequentlyTypeList.Where(x => x.Count() == maxRep);
             Console.WriteLine("\nMost Frequently Type:");
             foreach (var type in mostFrequentlyType)
             {
                 Console.WriteLine("{0} {1} {2}", type.Key.type, type.Key.color, type.Count());
             }
-                        
+
         }
     }
 }
