@@ -8,5 +8,18 @@ namespace Exercise_02_TwentyPlusOne
 {
     class Deck
     {
+        List<Card> deck = new List<Card>();
+        public List<Card> CreateDeck()
+        {
+            var suits = Enum.GetValues(typeof(Suit)).Cast<Suit>();
+            var ranks = Enum.GetValues(typeof(Rank)).Cast<Rank>();
+            var fillingDeck = suits.SelectMany(x => ranks, (a, b) => new Card(a, b)).ToList();
+            foreach (var card in fillingDeck)
+            {
+                Console.WriteLine("{0} {1}", card.Suit, card.Rank);
+            }
+
+            return deck = fillingDeck;
+        }
     }
 }

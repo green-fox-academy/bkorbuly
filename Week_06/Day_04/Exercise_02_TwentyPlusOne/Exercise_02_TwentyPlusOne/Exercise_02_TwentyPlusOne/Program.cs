@@ -10,6 +10,9 @@ namespace Exercise_02_TwentyPlusOne
     {
         static void Main(string[] args)
         {
+            var deck = new Deck();
+            deck.CreateDeck();
+            Console.ReadLine();
         }
     }
 }
