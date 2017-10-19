@@ -35,5 +35,11 @@ namespace Exercise_02_TwentyPlusOne
             Console.WriteLine("{0} {1}", lastCard.Suit, lastCard.Rank);
             return lastCard;
         }
+
+        public List<Card> ShuffleDeck()
+        {
+            var shuffledeck = deck.
+            return deck;
+        }
     }
 }
