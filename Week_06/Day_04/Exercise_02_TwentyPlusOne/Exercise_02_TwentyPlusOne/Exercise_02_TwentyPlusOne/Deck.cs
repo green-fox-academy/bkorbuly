@@ -21,5 +21,19 @@ namespace Exercise_02_TwentyPlusOne
 
             return deck = fillingDeck;
         }
+
+        public Card PullFirst()
+        {
+            var firsCard = deck.First();
+            Console.WriteLine("{0} {1}", firsCard.Suit, firsCard.Rank);
+            return firsCard;
+        }
+
+        public Card PullLast()
+        {
+            var lastCard = deck.Last();
+            Console.WriteLine("{0} {1}", lastCard.Suit, lastCard.Rank);
+            return lastCard;
+        }
     }
 }

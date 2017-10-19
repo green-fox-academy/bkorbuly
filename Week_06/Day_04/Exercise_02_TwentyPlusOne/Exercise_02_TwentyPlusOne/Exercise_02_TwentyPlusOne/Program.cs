@@ -12,6 +12,8 @@ namespace Exercise_02_TwentyPlusOne
         {
             var deck = new Deck();
             deck.CreateDeck();
+            Console.WriteLine();
+            deck.PullFirst();
             Console.ReadLine();
         }
     }
