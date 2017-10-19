@@ -10,11 +10,14 @@ namespace Exercise_01_ParkingLot
     {
         static Random rnd = new Random();
         public static List<Car> carlist = new List<Car>();
-       
+   
+        CarType type;
+        CarColor color;       
 
         public Car(CarType type, CarColor color)
         {
-            
+            this.type = type;
+            this.color = color;
         }
         public enum CarType
         {
@@ -36,6 +39,7 @@ namespace Exercise_01_ParkingLot
             purple = 6,
             pink = 7
         }
+
         public static List<Car> CarInitialization()
         {
             
@@ -48,6 +52,16 @@ namespace Exercise_01_ParkingLot
             }
 
             return carlist;
+        }
+
+        public static void CountTypes()
+        {
+            var countTypes = carlist.GroupBy(x => x.type);
+            Console.WriteLine("\nTypes: Quantity:");
+            foreach(var types in countTypes)
+            {
+                Console.WriteLine("{0} {1}", types.Key, types.Count());
+            }
         }
     }
 }

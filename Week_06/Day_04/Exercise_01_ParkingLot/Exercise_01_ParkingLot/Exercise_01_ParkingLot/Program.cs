@@ -11,6 +11,7 @@ namespace Exercise_01_ParkingLot
         static void Main(string[] args)
         {
             Car.CarInitialization();
+            Car.CountTypes();
             Console.ReadLine();
         }
     }
