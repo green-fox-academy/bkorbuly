@@ -76,7 +76,7 @@ namespace Exercise_01_ParkingLot
 
         public static void MostFrequentlyType()
         {
-            var mostFrequentlyType = carlist.GroupBy(x => x).OrderBy(x => x.Key.type).OrderBy( x => x.Key.color).GroupBy(x => x.Key);
+            var mostFrequentlyType = carlist.GroupBy(x => new { x.color, x.type }).OrderByDescending(x => x.Count()).Take(1).ToArray();
             Console.WriteLine("\nMost Frequently Type:");
             foreach (var type in mostFrequentlyType)
             {
