@@ -18,7 +18,7 @@ namespace Exercise_01.Controllers
         [Route("hello")]
         public ContentResult Hello()
         {
-            return Content("Hello World!");
+            return Content("Hello World");
         }
     }
 }
