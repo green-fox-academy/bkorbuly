@@ -19,9 +19,10 @@ namespace Exercise_01.Controllers
             return View();
         }
         [Route("greeting")]
-        public object Greeting()
+        public object Greeting(string name)
         {
-            return new JsonResult(new Greetings{ Id = 1, Content = "Hello World" });
+
+            return new JsonResult(new Greetings{ Id = 1, Content = "Hello World " + name });
         }
     }
 }
