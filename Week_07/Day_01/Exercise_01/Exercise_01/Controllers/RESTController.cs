@@ -22,7 +22,7 @@ namespace Exercise_01.Controllers
         public object Greeting(string name)
         {
 
-            return new JsonResult(new Greetings{ Id = 1, Content = "Hello World " + name });
+            return new JsonResult(new Greetings{ Id = 1, Content = "Hello" + name });
         }
     }
 }
