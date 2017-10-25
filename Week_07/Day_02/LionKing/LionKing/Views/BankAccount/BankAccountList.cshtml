@@ -7,21 +7,36 @@
 </head>
 <body>
     This is the list of the BankAccounts:
-    <h1>ID | Name | Balance | Currency | Animaltype | Status | Good or Bad</h1>
-    @for(int i=0; i<Model.bankAccountList.Count(); i++)
-    { 
-        <p>@(i+1) | @Model.bankAccountList[i].Name | @Model.bankAccountList[i].Balance |
-        @Model.bankAccountList[i].Currency | @Model.bankAccountList[i].Animaltype | 
-        @if (Model.bankAccountList[i].IsKingOrNot)
+    <table>
+        <tr>
+            <td><h1>ID</h1></td>
+            <td><h1>Name</h1></td>
+            <td><h1>Balance</h1></td>
+            <td><h1>Currency</h1></td>
+            <td><h1>Animaltype</h1></td>
+            <td><h1>Status</h1></td>
+            <td><h1>Good or Bad</h1></td>
+        </tr>
+        @for (int i = 0; i < Model.bankAccountList.Count(); i++)
         {
-            @:<span id="king">King</span>
+            <tr>
+                <td>@(i + 1)</td>
+                <td>@Model.bankAccountList[i].Name</td>
+                <td>@Model.bankAccountList[i].Balance</td>
+                <td>@Model.bankAccountList[i].Currency</td>
+                <td>@Model.bankAccountList[i].Animaltype</td>
+                <td>@if (Model.bankAccountList[i].IsKingOrNot)
+                {
+                    @:<span id="king">King</span>
+                }
+                else
+                {
+                    @:dependant
+                }
+                </td>
+                <td>@((Model.bankAccountList[i].GoodGuy) ? "Good guy" : "Bad guy")</td>
+            </tr>
         }
-        else
-        {
-            @:dependant
-        }
-        @((Model.bankAccountList[i].GoodGuy) ? " | Good guy" : "| Bad guy")
-        </p>
-    }
+    </table>
 </body>
 </html>

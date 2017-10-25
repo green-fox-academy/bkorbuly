@@ -6,6 +6,17 @@
     animation-fill-mode: forwards;
     display:inline;
 }
+table  {
+    align-content:center;
+}
+tr{
+    align-content:center;
+}
+td{
+    column-width:auto;
+    text-align:center;
+    width:300px;
+}
 @keyframes shine {
     10% {
         opacity: 1;
