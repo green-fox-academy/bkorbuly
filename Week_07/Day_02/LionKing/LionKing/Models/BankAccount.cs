@@ -7,6 +7,7 @@ namespace LionKing.Models
 {
     public class BankAccount
     {
+        public bool IsKingOrNot { get; set; } = false;
         public string Name { get; set; }
         public double Balance { get; set; }
         public string Animaltype { get; set; }

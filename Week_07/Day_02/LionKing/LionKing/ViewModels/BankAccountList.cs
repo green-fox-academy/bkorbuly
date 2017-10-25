@@ -26,7 +26,8 @@ namespace LionKing.Models
             Name = "Mufasa",
             Balance = 2000000,
             Animaltype = "Lion",
-            Currency = "Zebra"
+            Currency = "Zebra",
+            IsKingOrNot = true
         };
         public BankAccount bankAccountFour = new BankAccount()
         {
