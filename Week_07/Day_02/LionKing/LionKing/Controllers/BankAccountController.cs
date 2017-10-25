@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using LionKing.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace LionKing.Controllers
 {
-    public class BankAccount : Controller
+    public class BankAccountController : Controller
     {
         // GET: /<controller>/
+        [Route("Simba")]
         public IActionResult Index()
         {
-            return View();
+            var bankaccount = new BankAccount()
+            {
+                Name = "Simba",
+                Balance = 2000,
+                Animaltype = "Animal.Lion"
+            };
+            return View(bankaccount);
         }
     }
 }
