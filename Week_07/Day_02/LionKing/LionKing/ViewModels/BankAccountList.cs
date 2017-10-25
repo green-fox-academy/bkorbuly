@@ -20,7 +20,7 @@ namespace LionKing.Models
             Balance = -2000,
             Animaltype = "Lion",
             Currency = "Zebra",
-            GoodGuy = 0
+            GoodGuy = false
         };
         public BankAccount bankAccountThree = new BankAccount()
         {
