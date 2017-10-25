@@ -19,7 +19,8 @@ namespace LionKing.Models
             Name = "Zordon",
             Balance = -2000,
             Animaltype = "Lion",
-            Currency = "Zebra"
+            Currency = "Zebra",
+            GoodGuy = 0
         };
         public BankAccount bankAccountThree = new BankAccount()
         {

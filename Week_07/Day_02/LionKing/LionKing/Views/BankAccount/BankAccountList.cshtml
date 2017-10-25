@@ -18,8 +18,17 @@
         }
         else
         {
-            @:dependant;
+            @:dependant
         }
+        @switch(@Model.bankAccountList[i].GoodGuy)
+            {
+                case 1:
+                    @:| Good guy
+                    break;
+                case 0:
+                    @:| Bad guy
+                    break;
+            }
         </p>
     }
 </body>
