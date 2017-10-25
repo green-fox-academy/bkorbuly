@@ -10,5 +10,6 @@ namespace LionKing.Models
         public string Name { get; set; }
         public double Balance { get; set; }
         public string Animaltype { get; set; }
+        public string Currency { get; set; }
     }
 }

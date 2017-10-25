@@ -15,13 +15,14 @@ namespace LionKing.Controllers
         [Route("Simba")]
         public IActionResult Index()
         {
-            var bankaccount = new BankAccount()
+            var bankAccountOne = new BankAccount()
             {
                 Name = "Simba",
                 Balance = 2000,
-                Animaltype = "Animal.Lion"
+                Animaltype = "Lion",
+                Currency = "Zebra"
             };
-            return View(bankaccount);
+            return View(bankAccountOne);
         }
     }
 }

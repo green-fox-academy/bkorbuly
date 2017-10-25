@@ -4,8 +4,8 @@
     <title>Bank Account</title>
 </head>
 <body>
-    Hello @Model.Name!
-    You are a @Model.Animaltype
-    Your balance is @Model.Balance    
+        Hello @Model.Name!
+        You are a(n) @Model.Animaltype
+        Your balance is  @{ @Model.Balance.ToString("0.00 ") @Model.Currency; }
 </body>
 </html>
