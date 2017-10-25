@@ -24,5 +24,13 @@ namespace LionKing.Controllers
             };
             return View(bankAccountOne);
         }
+
+        [Route("List")]
+        public IActionResult BankAccountList()
+        {
+            var bankAccountList = new BankAccountList();
+            bankAccountList.FillList();
+            return View(bankAccountList);
+        }
     }
 }

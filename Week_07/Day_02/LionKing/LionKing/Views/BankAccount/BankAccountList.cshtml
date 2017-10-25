@@ -1,0 +1,14 @@
+﻿@model LionKing.Models.BankAccountList
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BankAccount List</title>
+</head>
+<body>
+    This is the list of the BankAccounts:
+    @foreach (var element in Model.bankAccountList)
+     { 
+            @element.Name;
+     }
+</body>
+</html>
