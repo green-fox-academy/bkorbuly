@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Exercise_01_TODO.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Exercise_01_TODO.Entity;
 
 namespace Exercise_01_TODO
 {
@@ -17,6 +20,8 @@ namespace Exercise_01_TODO
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<TodoContext>(options => options.UseSqlServer(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = master; Integrated Security = True; Connect Timeout = 30;"));
+            services.AddScoped<TodoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
