@@ -32,10 +32,10 @@ namespace Exercise_01_Frontend
             app.UseStaticFiles();
             app.UseDefaultFiles();
             
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
         }
     }
 }
