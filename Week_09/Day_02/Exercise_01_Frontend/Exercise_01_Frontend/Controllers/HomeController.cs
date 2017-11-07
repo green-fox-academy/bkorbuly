@@ -56,7 +56,7 @@ namespace Exercise_01_Frontend.Controllers
             {
                 return Json(new { error = "Please provide a number!" });
             }
-            else if (what == "sum" && number != null)
+            else if (what == "sum" && !String.IsNullOrEmpty(number.Number.ToString()))
             {
                 return Json(new { result = number.Sum() });
             }
@@ -64,7 +64,7 @@ namespace Exercise_01_Frontend.Controllers
             {
                 return Json(new { error = "Please provide a number!" });
             }
-            else if (what == "factor" && number != null)
+            else if (what == "factor" && !String.IsNullOrEmpty(number.Number.ToString()))
             {
                 return Json(new { result = number.Factor() });
             }
