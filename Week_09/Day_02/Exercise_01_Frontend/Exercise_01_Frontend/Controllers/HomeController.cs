@@ -19,11 +19,25 @@ namespace Exercise_01_Frontend.Controllers
         [Route("/doubling")]
         public IActionResult Doubling(int? input)
         {
-            if(input == null)
+            if (input == null)
             {
                 return Json(new { error = "Please provide an input!" });
             }
-            return Json(new { received = input, result = input*2 });
+            return Json(new { received = input, result = input * 2 });
         }
+        [HttpGet]
+        [Route("/greeter")]
+        public IActionResult Greeter(string name, string title)
+        {
+            if (name == null)
+            {
+                return Json(new { error = "Please provide a name!"});
+            }
+            else if (title == null)
+            {
+                return Json(new { error = "Please provide a title!" });
+            }
+            return Json(new { welcome_message = "Oh, hi there " + name + ", my dear " + title + "!" });
+            }
     }
 }
