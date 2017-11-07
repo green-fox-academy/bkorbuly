@@ -50,23 +50,23 @@ namespace Exercise_01_Frontend.Controllers
         
         [HttpPost]
         [Route("dountil/{what}")]
-        public IActionResult Dountil(string what,[FromBody] DoUntil Number)
+        public IActionResult Dountil(string what,[FromBody] DoUntil number)
         {
-            if (what == "sum" && Number == null)
+            if (what == "sum" && number == null)
             {
                 return Json(new { error = "Please provide a number!" });
             }
-            else if (what == "sum" && Number != null)
+            else if (what == "sum" && number != null)
             {
-                return Json(new { result = Number.Sum() });
+                return Json(new { result = number.Sum() });
             }
-            else if (what == "factor" && Number == null)
+            else if (what == "factor" && number == null)
             {
                 return Json(new { error = "Please provide a number!" });
             }
-            else if (what == "factor" && Number != null)
+            else if (what == "factor" && number != null)
             {
-                return Json(new { result = Number.Factor() });
+                return Json(new { result = number.Factor() });
             }
             return Json(new { error = "Please provide a number!" });
         }

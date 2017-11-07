@@ -8,7 +8,7 @@ namespace Exercise_01_Frontend.Models
 {
     public class DoUntil
     {
-        int Number { get; set; }
+        public int Number { get; set; }
 
         public int Sum()
         {
