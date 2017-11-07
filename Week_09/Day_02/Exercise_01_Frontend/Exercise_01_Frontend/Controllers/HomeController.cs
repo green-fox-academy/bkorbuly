@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Exercise_01_Frontend.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -45,6 +46,29 @@ namespace Exercise_01_Frontend.Controllers
         public IActionResult Appenda(string appendable)
         {
             return Json(new { appended = appendable + "a" });
-        }    
+        }
+        
+        [HttpPost]
+        [Route("dountil/{what}")]
+        public IActionResult Dountil(string what,[FromBody] DoUntil Number)
+        {
+            if (what == "sum" && Number == null)
+            {
+                return Json(new { error = "Please provide a number!" });
+            }
+            else if (what == "sum" && Number != null)
+            {
+                return Json(new { result = Number.Sum() });
+            }
+            else if (what == "factor" && Number == null)
+            {
+                return Json(new { error = "Please provide a number!" });
+            }
+            else if (what == "factor" && Number != null)
+            {
+                return Json(new { result = Number.Factor() });
+            }
+            return Json(new { error = "Please provide a number!" });
+        }
     }
 }
