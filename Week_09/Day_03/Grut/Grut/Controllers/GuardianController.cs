@@ -16,7 +16,7 @@ namespace Groot.Controllers
             return View();
         }
 
-        [HttpGet]
-        [Route("/groot")]
+        //[HttpGet]
+        //[Route("/groot")]
     }
 }
