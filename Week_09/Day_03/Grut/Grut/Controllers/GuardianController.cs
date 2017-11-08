@@ -16,7 +16,11 @@ namespace Groot.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //[Route("/groot")]
+        [HttpGet]
+        [Route("/groot")]
+        public IActionResult GrootJson(string message)
+        {
+            return Json(new { received = message, translated = "I am Groot!" });
+        }
     }
 }

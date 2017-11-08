@@ -1,4 +1,5 @@
-using Grut;
+using Groot;
+using Groot.Controllers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using System;
@@ -25,9 +26,12 @@ public class Test1
     public async Task IndexShouldReturnOkStatus()
     {
         //act
-        var response = await Client.GetAsync("/");
+        var request = new HttpRequestMessage(HttpMethod.Get, "/groot");
+        request.Headers.Add("message", "somemessage");
+        var response = await Client.GetAsync("/groot");
+        var responseJson = await response.Content.ReadAsStringAsync();
 
         //assert
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal("{\"received\": \"somemessage\",\"translated\": \"I am Groot!\"}", responseJson);
     }
 }
