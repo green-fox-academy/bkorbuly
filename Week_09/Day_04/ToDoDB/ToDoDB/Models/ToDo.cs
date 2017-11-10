@@ -7,10 +7,10 @@ namespace ToDoDB.Models
 {
     public class ToDo
     {
-        public long id;
-        public string title;
-        public bool isUrgent = false;
-        public bool isDone = false;
+        public long Id { get; set; }
+        public string Title { get; set; }
+        public bool IsUrgent { get; set; } = false;
+        public bool IsDone { get; set; } = false;
 
     }
 }

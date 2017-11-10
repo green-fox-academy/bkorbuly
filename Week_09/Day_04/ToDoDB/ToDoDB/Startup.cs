@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ToDoDB.Entities;
+using Microsoft.EntityFrameworkCore;
+using ToDoDB.Repositories;
 
 namespace ToDoDB
 {
@@ -15,8 +18,9 @@ namespace ToDoDB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            //services.AddDbContext<YourContext>
-            //    (options =>options.UseSqlServer(Configuration["ConnectionStrings:YourConnection"]));
+            services.AddDbContext<ToDoContext>
+                (options =>options.UseSqlServer(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = ToDo; Integrated Security = True; Connect Timeout = 30;"));
+            services.AddScoped<ToDoRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

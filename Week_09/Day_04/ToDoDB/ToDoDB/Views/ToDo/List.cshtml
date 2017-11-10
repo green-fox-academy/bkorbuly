@@ -1,0 +1,29 @@
+﻿@model System.Collections.Generic.List<ToDoDB.Models.ToDo>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>This is my Todo list for today:</h1>
+    <table align="center" cellpadding="23" cellspacing="23" border="0">
+        <tr>
+            <td>ID:</td>
+            <td>Title:</td>
+            <td>Done:</td>
+            <td>Urgent:</td>
+        </tr>
+    </table>
+    <table align="center" cellpadding="23" border="1">
+        @foreach (var todo in @Model)
+        {
+            <tr>
+                <td>@todo.Id</td>
+                <td>@todo.Title</td>
+                <td>@todo.IsDone</td>
+                <td>@todo.IsUrgent</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>>
