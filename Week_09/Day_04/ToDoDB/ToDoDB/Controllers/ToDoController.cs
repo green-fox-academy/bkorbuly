@@ -21,7 +21,7 @@ namespace ToDoDB.Controllers
         [Route("/todo")]
         public IActionResult List(bool isActive)
         {
-            if (isActive == true)
+            if (isActive)
                 return View(ToDoRepositroy.GetListIsDone());
             return RedirectToAction("List");
         }
