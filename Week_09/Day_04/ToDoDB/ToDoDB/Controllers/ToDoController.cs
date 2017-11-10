@@ -46,5 +46,11 @@ namespace ToDoDB.Controllers
             ToDoRepositroy.AddTodo(toDo);
             return RedirectToAction("List");
         }
+        [HttpPost]
+        [Route("/remove/{id}")]
+        public IActionResult List(int id)
+        {
+            return RedirectToAction("List");
+        }
     }
 }
