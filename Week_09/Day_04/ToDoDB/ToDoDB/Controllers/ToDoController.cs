@@ -15,5 +15,12 @@ namespace ToDoDB.Controllers
         {
             return View();
         }
+        [Route("/")]
+        [Route("/list")]
+        public IActionResult List()
+        {
+            string first = "This is my first todo";
+            return Content(first);
+        }
     }
 }
