@@ -7,5 +7,7 @@ namespace ShoppingList.Models
 {
     public class User
     {
+        public int Name{ get; set; }
+        public DateTime Date { get; set; }
     }
 }

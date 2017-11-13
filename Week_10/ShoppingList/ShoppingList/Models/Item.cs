@@ -11,5 +11,6 @@ namespace ShoppingList.Models
         public string ItemName { get; set; }
         public int Quantity { get; set; }
         public string Description { get; set; }
+        public bool IsUrgent { get; set; } = false;
     }
 }
