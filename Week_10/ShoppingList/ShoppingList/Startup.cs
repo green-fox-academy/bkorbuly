@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ShoppingList.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace ShoppingList
 {
@@ -16,6 +18,9 @@ namespace ShoppingList
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<ShoppingListContext>(options =>
+                options.UseNpgsql(
+                    Configuration["ConnectionString:ShoppingListConnection"]));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
